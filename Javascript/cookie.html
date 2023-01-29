@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cookies</title>
+        <script type="text/javascript">
+            let cname = encodeURIComponent(prompt("Enter your username"));
+            let cvalue = encodeURIComponent(prompt("Enter your value"));
+            let exdays = encodeURIComponent(prompt("Enter your expiry date"));
+
+            function setCookie(cname, cvalue, exdays){
+              const d = new Date();
+              d.setTime(d.getTime() + (exdays*24*60*60*1000));
+              let expires = "expires="+ d.toUTCString();
+              document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            setCookie(cname,cvalue,exdays);
+
+            function display(){
+              document.getElementById("cookie-value").innerText = document.cookie;
+            }
+        </script>
+    </head>
+    <body>
+        <a href="#" onclick="display()">DisplayCookie</a>
+        <h1 id="cookie-value"></h1>
+    </body>
+</html>

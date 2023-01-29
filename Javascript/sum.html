@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding two number</title>
+        <script>
+            function sum(){
+                document.getElementById('sum').innerHTML = parseInt(document.getElementById("1").value) + parseInt(document.getElementById("2").value); 
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Insert Two number</h1>
+        <input type="number" id="1"> + <input type="number" id="2"><br>
+        
+        <a href="#" onclick="sum()"">ADD</a>
+
+        <h3 id="sum"></h3>
+    </body>
+</html>
